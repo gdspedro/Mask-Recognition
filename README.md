@@ -46,7 +46,7 @@ Para fazer um novo treinamento a partir do último resultado, basta mudar o nome
 
 Caso esteja usando o notebook do Google Colab e seu DataSet possua muitas imagens, recomendo que faça uma divisão de até 500 imagens por treinamento.
 
-### Para testar o modelo, pode ser com a Webcan do computador, vídeos do computador e do youtube e imagens
+### Para testar o modelo, pode ser com a Webcan do computador, youtube, vídeos salvos e imagens
 ```
 python3 detect.py --conf 0.5 --weights model.pt --source 0    #Irá exibir resultados a partir de 50% de precisão e o source da camera é referente a porta de entrada do computador
 ```
