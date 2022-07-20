@@ -23,10 +23,31 @@ Precisamos para o treinamento de um arquivo data.yaml,
 nele escrevemos os rotulos do treinamento.
 Ex:
 ```
-path: ../data
+path: ../data     #Sai da pasta da yolo, e entra no caminho onde estão as imagens e as labels rotuladas
+
 train: imagens_treino
 val: imagens_validação
-tst: imagens_teste    #Sinta-se a vontade em colocar imagens de testa ou não
+tst: imagens_teste      #Sinta-se a vontade em colocar imagens de testa ou não
 
 nc: 2   #Quatidade de Classes
-names: ['No mask' , 'Mask']   #Colocar na ordem em em que foi rotulado, se 'No mask' estiver definido como 0 no arquivo txt, precisa estar ser o primeiro termo definido
+
+names: ['No mask' , 'Mask']     #Colocar na ordem em em que foi rotulado, se 'No mask' tiver o (0) como primeiro termo no arquivo txt,
+precisará também ser o primeiro termo em relação a quantidade de classes
+```
+
+#Resta agora realizar o treinamento.
+
+```
+!python train.py --img 640 --batch 30 --epochs 25 --data data.yaml --weights yolov5s.pt --cache
+```
+Caso esteja usando o notebook do Google Colab e seu DataSet possua muitas imagens, recomendo que faça uma divisão de até 500 imagens por treinamento.
+
+
+
+
+
+
+
+
+
+
